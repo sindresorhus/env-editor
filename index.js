@@ -40,6 +40,12 @@ const editors = () => [{
 	bin: 'mate',
 	paths: [],
 	keywords: []
+}, {
+	id: 'vim',
+	name: 'vim',
+	bin: 'vim',
+	paths: [],
+	keywords: []
 }];
 
 const get = input => {
