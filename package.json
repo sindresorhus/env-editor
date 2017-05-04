@@ -37,7 +37,8 @@
     "atom",
     "vscode",
     "webstorm",
-    "textmate"
+    "textmate",
+    "vim"
   ],
   "devDependencies": {
     "ava": "*",

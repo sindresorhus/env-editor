@@ -40,6 +40,11 @@ test('.get() - TextMate', t => {
 	t.is(m.get('TextMate').id, 'textmate');
 });
 
+test('.get() - Vim', t => {
+	t.is(m.get('vim').id, 'vim');
+	t.is(m.get('Vim').id, 'vim');
+});
+
 test('.all()', t => {
 	const all = m.all();
 	t.true(Array.isArray(all));

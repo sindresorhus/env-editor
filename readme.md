@@ -12,6 +12,7 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 - Visual Studio Code
 - WebStorm
 - TextMate
+- Vim
 
 
 ## Install
