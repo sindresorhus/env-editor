@@ -42,7 +42,7 @@ const editors = () => [{
 	keywords: []
 }, {
 	id: 'vim',
-	name: 'vim',
+	name: 'Vim',
 	bin: 'vim',
 	paths: [],
 	keywords: []
