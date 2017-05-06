@@ -39,7 +39,8 @@
     "webstorm",
     "textmate",
     "vim",
-    "intellij"
+    "intellij",
+    "neovim"
   ],
   "devDependencies": {
     "ava": "*",

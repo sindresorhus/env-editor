@@ -58,6 +58,12 @@ const editors = () => [{
 		'jetbrains',
 		'ide'
 	]
+}, {
+	id: 'neovim',
+	name: 'NeoVim',
+	bin: 'nvim',
+	paths: [],
+	keywords: []
 }];
 
 const get = input => {

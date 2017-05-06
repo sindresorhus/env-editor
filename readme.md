@@ -14,6 +14,7 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 - TextMate
 - Vim
 - IntelliJ
+- NeoVim
 
 
 ## Install
