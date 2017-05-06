@@ -45,6 +45,13 @@ test('.get() - Vim', t => {
 	t.is(m.get('Vim').id, 'vim');
 });
 
+test('.get() - IntelliJ IDEA', t => {
+	t.is(m.get('intellij').id, 'intellij');
+	t.is(m.get('idea').id, 'intellij');
+	t.is(m.get('IntelliJ').id, 'intellij');
+	t.is(m.get('IntelliJ IDEA').id, 'intellij');
+});
+
 test('.all()', t => {
 	const all = m.all();
 	t.true(Array.isArray(all));

@@ -13,6 +13,7 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 - WebStorm
 - TextMate
 - Vim
+- IntelliJ
 
 
 ## Install

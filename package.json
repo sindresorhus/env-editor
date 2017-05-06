@@ -38,7 +38,8 @@
     "vscode",
     "webstorm",
     "textmate",
-    "vim"
+    "vim",
+    "intellij"
   ],
   "devDependencies": {
     "ava": "*",

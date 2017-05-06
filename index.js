@@ -46,6 +46,13 @@ const editors = () => [{
 	bin: 'vim',
 	paths: [],
 	keywords: []
+},
+{
+	id: 'intellij',
+	name: 'IntelliJ IDEA',
+	bin: 'idea',
+	paths: [],
+	keywords: ['idea', 'java', 'jetbrains', 'ide']
 }];
 
 const get = input => {
