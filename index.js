@@ -5,6 +5,7 @@ const editors = () => [{
 	id: 'sublime',
 	name: 'Sublime Text',
 	bin: 'subl',
+	isTerminalEditor: false,
 	paths: [
 		'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl',
 		'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'
@@ -14,6 +15,7 @@ const editors = () => [{
 	id: 'atom',
 	name: 'Atom',
 	bin: 'atom',
+	isTerminalEditor: false,
 	paths: [
 		'/Applications/Atom.app/Contents/Resources/app/atom.sh'
 	],
@@ -22,6 +24,7 @@ const editors = () => [{
 	id: 'vscode',
 	name: 'Visual Studio Code',
 	bin: 'code',
+	isTerminalEditor: false,
 	paths: [
 		'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'
 	],
@@ -32,24 +35,28 @@ const editors = () => [{
 	id: 'webstorm',
 	name: 'WebStorm',
 	bin: 'wstorm',
+	isTerminalEditor: false,
 	paths: [],
 	keywords: []
 }, {
 	id: 'textmate',
 	name: 'TextMate',
 	bin: 'mate',
+	isTerminalEditor: false,
 	paths: [],
 	keywords: []
 }, {
 	id: 'vim',
 	name: 'Vim',
 	bin: 'vim',
+	isTerminalEditor: true,
 	paths: [],
 	keywords: []
 }, {
 	id: 'neovim',
 	name: 'NeoVim',
 	bin: 'nvim',
+	isTerminalEditor: true,
 	paths: [],
 	keywords: [
 		'vim'
@@ -58,6 +65,7 @@ const editors = () => [{
 	id: 'intellij',
 	name: 'IntelliJ IDEA',
 	bin: 'idea',
+	isTerminalEditor: false,
 	paths: [],
 	keywords: [
 		'idea',
