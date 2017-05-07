@@ -63,7 +63,9 @@ const editors = () => [{
 	name: 'NeoVim',
 	bin: 'nvim',
 	paths: [],
-	keywords: []
+	keywords: [
+		'vim'
+	]
 }];
 
 const get = input => {
