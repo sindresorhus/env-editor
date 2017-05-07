@@ -46,8 +46,15 @@ const editors = () => [{
 	bin: 'vim',
 	paths: [],
 	keywords: []
-},
-{
+}, {
+	id: 'neovim',
+	name: 'NeoVim',
+	bin: 'nvim',
+	paths: [],
+	keywords: [
+		'vim'
+	]
+}, {
 	id: 'intellij',
 	name: 'IntelliJ IDEA',
 	bin: 'idea',

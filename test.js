@@ -45,6 +45,12 @@ test('.get() - Vim', t => {
 	t.is(m.get('Vim').id, 'vim');
 });
 
+test('.get() - NeoVim', t => {
+	t.is(m.get('neovim').id, 'neovim');
+	t.is(m.get('nvim').id, 'neovim');
+	t.is(m.get('NeoVim').id, 'neovim');
+});
+
 test('.get() - IntelliJ IDEA', t => {
 	t.is(m.get('intellij').id, 'intellij');
 	t.is(m.get('idea').id, 'intellij');

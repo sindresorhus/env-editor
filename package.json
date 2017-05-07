@@ -39,6 +39,7 @@
     "webstorm",
     "textmate",
     "vim",
+    "neovim",
     "intellij"
   ],
   "devDependencies": {
