@@ -8,6 +8,13 @@ test.serial('.default()', t => {
 	process.env.EDITOR = editor;
 });
 
+test('.get() - generic (no match)', t => {
+	const result = m.get('Generic Editor');
+	t.is(result.id, 'generic-editor');
+	t.is(result.name, 'Generic Editor');
+	t.is(result.bin, 'generic');
+});
+
 test('.get() - Sublime', t => {
 	t.is(m.get('sublime').id, 'sublime');
 	t.is(m.get('Sublime').id, 'sublime');

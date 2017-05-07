@@ -76,37 +76,41 @@ const editors = () => [{
 }];
 
 const get = input => {
-	input = input.toLowerCase().trim();
-	const bin = input.split(path.sep).pop();
+	input = input.trim();
+	const needle = input.toLowerCase();
+	const id = needle.split(/[/\\]/).pop().replace(/\s/g, '-');
+	const bin = id.split('-')[0];
 
 	for (const editor of editors()) {
 		// TODO: Maybe use `leven` module for more flexible matching
 		if (
-			input === editor.id ||
-			input === editor.name.toLowerCase() ||
+			needle === editor.id ||
+			needle === editor.name.toLowerCase() ||
 			bin === editor.bin
 		) {
 			return editor;
 		}
 
 		for (const p of editor.paths) {
-			if (path.normalize(input) === path.normalize(p)) {
+			if (path.normalize(needle) === path.normalize(p)) {
 				return editor;
 			}
 		}
 
 		for (const keyword of editor.keywords) {
-			if (input === keyword) {
+			if (needle === keyword) {
 				return editor;
 			}
 		}
 	}
 
 	return {
-		id: input,
+		id,
 		name: input,
-		bin: input,
-		paths: []
+		bin,
+		isTerminalEditor: false,
+		paths: [],
+		keywords: []
 	};
 };
 
