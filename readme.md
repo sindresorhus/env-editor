@@ -35,6 +35,7 @@ envEditor.get('sublime');
 	id: 'sublime',
 	name: 'Sublime Text',
 	bin: 'subl',
+	isTerminalEditor: false,
 	paths: [
 		'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl',
 		'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'
