@@ -52,7 +52,12 @@ const editors = () => [{
 	name: 'IntelliJ IDEA',
 	bin: 'idea',
 	paths: [],
-	keywords: ['idea', 'java', 'jetbrains', 'ide']
+	keywords: [
+		'idea',
+		'java',
+		'jetbrains',
+		'ide'
+	]
 }];
 
 const get = input => {
