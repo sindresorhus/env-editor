@@ -15,12 +15,14 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 - Vim
 - NeoVim
 - IntelliJ
+- GNU nano
+- GNU Emacs
 
 
 ## Install
 
 ```
-$ npm install --save env-editor
+$ npm install env-editor
 ```
 
 

@@ -73,6 +73,29 @@ const editors = () => [{
 		'jetbrains',
 		'ide'
 	]
+}, {
+	id: 'nano',
+	name: 'GNU nano',
+	bin: 'nano',
+	isTerminalEditor: true,
+	paths: [],
+	keywords: []
+}, {
+	id: 'emacs',
+	name: 'GNU Emacs',
+	bin: 'emacs',
+	isTerminalEditor: true,
+	paths: [],
+	keywords: []
+}, {
+	id: 'emacsforosx',
+	name: 'GNU Emacs for Mac OS X',
+	bin: 'Emacs',
+	isTerminalEditor: false,
+	paths: [
+		'/Applications/Emacs.app/Contents/MacOS/Emacs'
+	],
+	keywords: []
 }];
 
 const get = input => {
@@ -119,6 +142,7 @@ module.exports.default = () => {
 
 	if (!editor) {
 		throw new Error(
+			// eslint-disable-next-line indent
 `
 Your $EDITOR environment variable is not set.
 Set it to the command/path of your editor in ~/.zshenv or ~/.bashrc:
