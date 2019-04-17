@@ -4,7 +4,7 @@ const path = require('path');
 const editors = () => [{
 	id: 'sublime',
 	name: 'Sublime Text',
-	bin: 'subl',
+	binary: 'subl',
 	isTerminalEditor: false,
 	paths: [
 		'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl',
@@ -14,7 +14,7 @@ const editors = () => [{
 }, {
 	id: 'atom',
 	name: 'Atom',
-	bin: 'atom',
+	binary: 'atom',
 	isTerminalEditor: false,
 	paths: [
 		'/Applications/Atom.app/Contents/Resources/app/atom.sh'
@@ -23,7 +23,7 @@ const editors = () => [{
 }, {
 	id: 'vscode',
 	name: 'Visual Studio Code',
-	bin: 'code',
+	binary: 'code',
 	isTerminalEditor: false,
 	paths: [
 		'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'
@@ -34,28 +34,28 @@ const editors = () => [{
 }, {
 	id: 'webstorm',
 	name: 'WebStorm',
-	bin: 'wstorm',
+	binary: 'wstorm',
 	isTerminalEditor: false,
 	paths: [],
 	keywords: []
 }, {
 	id: 'textmate',
 	name: 'TextMate',
-	bin: 'mate',
+	binary: 'mate',
 	isTerminalEditor: false,
 	paths: [],
 	keywords: []
 }, {
 	id: 'vim',
 	name: 'Vim',
-	bin: 'vim',
+	binary: 'vim',
 	isTerminalEditor: true,
 	paths: [],
 	keywords: []
 }, {
 	id: 'neovim',
 	name: 'NeoVim',
-	bin: 'nvim',
+	binary: 'nvim',
 	isTerminalEditor: true,
 	paths: [],
 	keywords: [
@@ -64,7 +64,7 @@ const editors = () => [{
 }, {
 	id: 'intellij',
 	name: 'IntelliJ IDEA',
-	bin: 'idea',
+	binary: 'idea',
 	isTerminalEditor: false,
 	paths: [],
 	keywords: [
@@ -76,21 +76,21 @@ const editors = () => [{
 }, {
 	id: 'nano',
 	name: 'GNU nano',
-	bin: 'nano',
+	binary: 'nano',
 	isTerminalEditor: true,
 	paths: [],
 	keywords: []
 }, {
 	id: 'emacs',
 	name: 'GNU Emacs',
-	bin: 'emacs',
+	binary: 'emacs',
 	isTerminalEditor: true,
 	paths: [],
 	keywords: []
 }, {
 	id: 'emacsforosx',
 	name: 'GNU Emacs for Mac OS X',
-	bin: 'Emacs',
+	binary: 'Emacs',
 	isTerminalEditor: false,
 	paths: [
 		'/Applications/Emacs.app/Contents/MacOS/Emacs'
@@ -102,20 +102,20 @@ const get = input => {
 	input = input.trim();
 	const needle = input.toLowerCase();
 	const id = needle.split(/[/\\]/).pop().replace(/\s/g, '-');
-	const bin = id.split('-')[0];
+	const binary = id.split('-')[0];
 
 	for (const editor of editors()) {
 		// TODO: Maybe use `leven` module for more flexible matching
 		if (
 			needle === editor.id ||
 			needle === editor.name.toLowerCase() ||
-			bin === editor.bin
+			binary === editor.binary
 		) {
 			return editor;
 		}
 
-		for (const p of editor.paths) {
-			if (path.normalize(needle) === path.normalize(p)) {
+		for (const editorPath of editor.paths) {
+			if (path.normalize(needle) === path.normalize(editorPath)) {
 				return editor;
 			}
 		}
@@ -130,7 +130,7 @@ const get = input => {
 	return {
 		id,
 		name: input,
-		bin,
+		binary,
 		isTerminalEditor: false,
 		paths: [],
 		keywords: []

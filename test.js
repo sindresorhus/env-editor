@@ -12,7 +12,7 @@ test('.get() - generic (no match)', t => {
 	const result = envEditor.get('Generic Editor');
 	t.is(result.id, 'generic-editor');
 	t.is(result.name, 'Generic Editor');
-	t.is(result.bin, 'generic');
+	t.is(result.binary, 'generic');
 });
 
 test('.get() - Sublime', t => {

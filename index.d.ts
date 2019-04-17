@@ -1,50 +1,54 @@
-export interface Editor {
-	id: string;
-	name: string;
-	bin: string;
-	isTerminalEditor: boolean;
-	paths: string[];
-	keywords: string[];
+declare namespace envEditor {
+	export interface Editor {
+		id: string;
+		name: string;
+		binary: string;
+		isTerminalEditor: boolean;
+		paths: string[];
+		keywords: string[];
+	}
 }
 
-/**
-Get info about the default editor.
+declare const envEditor: {
+	/**
+	Get info about the default editor.
 
-The user is expected to have the `$EDITOR` environment variable set, and if not, a user-friendly error is thrown.
+	The user is expected to have the `$EDITOR` environment variable set, and if not, a user-friendly error is thrown.
 
-@returns Info about the default editor.
-*/
-export default function(): Editor;
+	@returns Metadata on the default editor.
+	*/
+	default(): envEditor.Editor;
 
-/**
-Get info about a specific editor.
+	/**
+	Get info about a specific editor.
 
-@param editor - This can be pretty flexible. It matches against all the data it has.
+	@param editor - This can be pretty flexible. It matches against all the data it has. For example, to get Sublime Text, you could write either of the following: `sublime`, `Sublime Text`, `subl`.
+	@returns Metadata on the specified editor.
 
-For example, to get Sublime Text, you could write either of the following: `sublime`, `Sublime Text`, `subl`.
-@returns Info about the specified editor.
+	@example
+	```
+	import envEditor = require('env-editor');
 
-@example
-```
-import * as envEditor from 'env-editor';
+	envEditor.get('sublime');
+	// {
+	// 	id: 'sublime',
+	// 	name: 'Sublime Text',
+	// 	binary: 'subl',
+	// 	isTerminalEditor: false,
+	// 	paths: [
+	// 		'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl',
+	// 		'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'
+	// 	],
+	// 	keywords: []
+	// }
+	```
+	*/
+	get(editor: string): envEditor.Editor;
 
-envEditor.get('sublime');
-// {
-// 	id: 'sublime',
-// 	name: 'Sublime Text',
-// 	bin: 'subl',
-// 	isTerminalEditor: false,
-// 	paths: [
-// 		'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl',
-// 		'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'
-// 	],
-// 	keywords: []
-// }
-```
-*/
-export function get(editor: string): Editor;
+	/**
+	@returns Metadata on all the editors.
+	*/
+	all(): envEditor.Editor[];
+};
 
-/**
-@returns Info on all the editors.
-*/
-export function all(): Editor[];
+export = envEditor;

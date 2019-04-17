@@ -52,13 +52,13 @@ envEditor.get('sublime');
 
 ### .default()
 
-Returns info about the default editor.
+Returns metadata on the default editor.
 
 The user is expected to have the `$EDITOR` environment variable set, and if not, a user-friendly error is thrown.
 
 ### .get(editor)
 
-Returns info about the specified editor.
+Returns metadata on the specified editor.
 
 #### editor
 
@@ -70,7 +70,7 @@ For example, to get Sublime Text, you could write either of the following: `subl
 
 ### .all()
 
-Returns an array with info on all the editors.
+Returns an array with metadata on all the editors.
 
 
 ## License
