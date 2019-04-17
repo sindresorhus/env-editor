@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
 
-const editors = () => [{
+const allEditors = () => [{
 	id: 'sublime',
 	name: 'Sublime Text',
 	binary: 'subl',
@@ -98,13 +98,13 @@ const editors = () => [{
 	keywords: []
 }];
 
-const get = input => {
-	input = input.trim();
-	const needle = input.toLowerCase();
+const getEditor = editor => {
+	editor = editor.trim();
+	const needle = editor.toLowerCase();
 	const id = needle.split(/[/\\]/).pop().replace(/\s/g, '-');
 	const binary = id.split('-')[0];
 
-	for (const editor of editors()) {
+	for (const editor of allEditors()) {
 		// TODO: Maybe use `leven` module for more flexible matching
 		if (
 			needle === editor.id ||
@@ -129,7 +129,7 @@ const get = input => {
 
 	return {
 		id,
-		name: input,
+		name: editor,
 		binary,
 		isTerminalEditor: false,
 		paths: [],
@@ -137,7 +137,7 @@ const get = input => {
 	};
 };
 
-module.exports.default = () => {
+module.exports.defaultEditor = () => {
 	const editor = process.env.EDITOR || process.env.VISUAL;
 
 	if (!editor) {
@@ -152,8 +152,8 @@ Set it to the command/path of your editor in ~/.zshenv or ~/.bashrc:
 		);
 	}
 
-	return get(editor);
+	return getEditor(editor);
 };
 
-module.exports.get = get;
-module.exports.all = editors;
+module.exports.getEditor = getEditor;
+module.exports.allEditors = allEditors;

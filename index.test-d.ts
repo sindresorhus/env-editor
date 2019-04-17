@@ -1,6 +1,6 @@
 import {expectType} from 'tsd';
-import envEditor = require('.');
+import {Editor, getEditor, defaultEditor, allEditors} from '.';
 
-expectType<envEditor.Editor>(envEditor.get('sublime'));
-expectType<envEditor.Editor>(envEditor.default());
-expectType<envEditor.Editor[]>(envEditor.all());
+expectType<Editor>(getEditor('sublime'));
+expectType<Editor>(defaultEditor());
+expectType<Editor[]>(allEditors());
