@@ -1,6 +1,6 @@
 # env-editor [![Build Status](https://travis-ci.org/sindresorhus/env-editor.svg?branch=master)](https://travis-ci.org/sindresorhus/env-editor)
 
-> Get info about the default editor or a specific editor
+> Get metadata on the default editor or a specific editor
 
 This module is used by [`open-editor`](https://github.com/sindresorhus/open-editor).
 
@@ -65,12 +65,13 @@ allEditors();
 [
 	{
 		id: 'atom',
-		...
-	}, {
-		id: 'sublime,
-		...
+		…
 	},
-	...
+	{
+		id: 'sublime,
+		…
+	},
+	…
 ]
 */
 ```
@@ -78,13 +79,13 @@ allEditors();
 
 ## API
 
-### .defaultEditor()
+### defaultEditor()
 
 Returns metadata on the default editor.
 
 The user is expected to have the `$EDITOR` environment variable set, and if not, a user-friendly error is thrown.
 
-### .getEditor(editor)
+### getEditor(editor)
 
 Returns metadata on the specified editor.
 
@@ -96,7 +97,7 @@ This can be pretty flexible. It matches against all the data it has.
 
 For example, to get Sublime Text, you could write either of the following: `sublime`, `Sublime Text`, `subl`.
 
-### .allEditors()
+### allEditors()
 
 Returns an array with metadata on all the editors.
 

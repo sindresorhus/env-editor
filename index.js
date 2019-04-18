@@ -1,102 +1,114 @@
 'use strict';
 const path = require('path');
 
-const allEditors = () => [{
-	id: 'sublime',
-	name: 'Sublime Text',
-	binary: 'subl',
-	isTerminalEditor: false,
-	paths: [
-		'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl',
-		'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'
-	],
-	keywords: []
-}, {
-	id: 'atom',
-	name: 'Atom',
-	binary: 'atom',
-	isTerminalEditor: false,
-	paths: [
-		'/Applications/Atom.app/Contents/Resources/app/atom.sh'
-	],
-	keywords: []
-}, {
-	id: 'vscode',
-	name: 'Visual Studio Code',
-	binary: 'code',
-	isTerminalEditor: false,
-	paths: [
-		'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'
-	],
-	keywords: [
-		'vs code'
-	]
-}, {
-	id: 'webstorm',
-	name: 'WebStorm',
-	binary: 'wstorm',
-	isTerminalEditor: false,
-	paths: [],
-	keywords: []
-}, {
-	id: 'textmate',
-	name: 'TextMate',
-	binary: 'mate',
-	isTerminalEditor: false,
-	paths: [],
-	keywords: []
-}, {
-	id: 'vim',
-	name: 'Vim',
-	binary: 'vim',
-	isTerminalEditor: true,
-	paths: [],
-	keywords: []
-}, {
-	id: 'neovim',
-	name: 'NeoVim',
-	binary: 'nvim',
-	isTerminalEditor: true,
-	paths: [],
-	keywords: [
-		'vim'
-	]
-}, {
-	id: 'intellij',
-	name: 'IntelliJ IDEA',
-	binary: 'idea',
-	isTerminalEditor: false,
-	paths: [],
-	keywords: [
-		'idea',
-		'java',
-		'jetbrains',
-		'ide'
-	]
-}, {
-	id: 'nano',
-	name: 'GNU nano',
-	binary: 'nano',
-	isTerminalEditor: true,
-	paths: [],
-	keywords: []
-}, {
-	id: 'emacs',
-	name: 'GNU Emacs',
-	binary: 'emacs',
-	isTerminalEditor: true,
-	paths: [],
-	keywords: []
-}, {
-	id: 'emacsforosx',
-	name: 'GNU Emacs for Mac OS X',
-	binary: 'Emacs',
-	isTerminalEditor: false,
-	paths: [
-		'/Applications/Emacs.app/Contents/MacOS/Emacs'
-	],
-	keywords: []
-}];
+const allEditors = () => [
+	{
+		id: 'sublime',
+		name: 'Sublime Text',
+		binary: 'subl',
+		isTerminalEditor: false,
+		paths: [
+			'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl',
+			'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'
+		],
+		keywords: []
+	},
+	{
+		id: 'atom',
+		name: 'Atom',
+		binary: 'atom',
+		isTerminalEditor: false,
+		paths: [
+			'/Applications/Atom.app/Contents/Resources/app/atom.sh'
+		],
+		keywords: []
+	},
+	{
+		id: 'vscode',
+		name: 'Visual Studio Code',
+		binary: 'code',
+		isTerminalEditor: false,
+		paths: [
+			'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'
+		],
+		keywords: [
+			'vs code'
+		]
+	},
+	{
+		id: 'webstorm',
+		name: 'WebStorm',
+		binary: 'wstorm',
+		isTerminalEditor: false,
+		paths: [],
+		keywords: []
+	},
+	{
+		id: 'textmate',
+		name: 'TextMate',
+		binary: 'mate',
+		isTerminalEditor: false,
+		paths: [],
+		keywords: []
+	},
+	{
+		id: 'vim',
+		name: 'Vim',
+		binary: 'vim',
+		isTerminalEditor: true,
+		paths: [],
+		keywords: []
+	},
+	{
+		id: 'neovim',
+		name: 'NeoVim',
+		binary: 'nvim',
+		isTerminalEditor: true,
+		paths: [],
+		keywords: [
+			'vim'
+		]
+	},
+	{
+		id: 'intellij',
+		name: 'IntelliJ IDEA',
+		binary: 'idea',
+		isTerminalEditor: false,
+		paths: [],
+		keywords: [
+			'idea',
+			'java',
+			'jetbrains',
+			'ide'
+		]
+	},
+	{
+		id: 'nano',
+		name: 'GNU nano',
+		binary: 'nano',
+		isTerminalEditor: true,
+		paths: [],
+		keywords: []
+	},
+	{
+		id: 'emacs',
+		name: 'GNU Emacs',
+		binary: 'emacs',
+		isTerminalEditor: true,
+		paths: [],
+		keywords: []
+	},
+	{
+		id: 'emacsforosx',
+		name: 'GNU Emacs for Mac OS X',
+		binary: 'Emacs',
+		isTerminalEditor: false,
+		paths: [
+			'/Applications/Emacs.app/Contents/MacOS/Emacs'
+		],
+		keywords: []
+	}
+];
 
 const getEditor = editor => {
 	editor = editor.trim();
