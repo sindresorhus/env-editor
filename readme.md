@@ -15,26 +15,42 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 - Vim
 - NeoVim
 - IntelliJ
+- GNU nano
+- GNU Emacs
 
 
 ## Install
 
 ```
-$ npm install --save env-editor
+$ npm install env-editor
 ```
 
 
 ## Usage
 
 ```js
-const envEditor = require('env-editor');
+const {defaultEditor, getEditor, allEditors} = require('env-editor');
 
-envEditor.get('sublime');
+defaultEditor();
+/*
+{
+	id: 'atom',
+	name: 'Atom',
+	binary: 'atom',
+	isTerminalEditor: false,
+	paths: [
+		'/Applications/Atom.app/Contents/Resources/app/atom.sh'
+	],
+	keywords: []
+}
+*/
+
+getEditor('sublime');
 /*
 {
 	id: 'sublime',
 	name: 'Sublime Text',
-	bin: 'subl',
+	binary: 'subl',
 	isTerminalEditor: false,
 	paths: [
 		'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl',
@@ -43,20 +59,34 @@ envEditor.get('sublime');
 	keywords: []
 }
 */
+
+allEditors();
+/*
+[
+	{
+		id: 'atom',
+		...
+	}, {
+		id: 'sublime,
+		...
+	},
+	...
+]
+*/
 ```
 
 
 ## API
 
-### .default()
+### .defaultEditor()
 
-Returns info about the default editor.
+Returns metadata on the default editor.
 
 The user is expected to have the `$EDITOR` environment variable set, and if not, a user-friendly error is thrown.
 
-### .get(editor)
+### .getEditor(editor)
 
-Returns info about the specified editor.
+Returns metadata on the specified editor.
 
 #### editor
 
@@ -66,9 +96,9 @@ This can be pretty flexible. It matches against all the data it has.
 
 For example, to get Sublime Text, you could write either of the following: `sublime`, `Sublime Text`, `subl`.
 
-### .all()
+### .allEditors()
 
-Returns an array with info on all the editors.
+Returns an array with metadata on all the editors.
 
 
 ## License
