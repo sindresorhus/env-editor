@@ -100,8 +100,3 @@ For example, to get Sublime Text, you could write either of the following: `subl
 ### allEditors()
 
 Returns an array with metadata on all the editors.
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

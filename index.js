@@ -38,10 +38,12 @@ const allEditors = () => [
 	{
 		id: 'webstorm',
 		name: 'WebStorm',
-		binary: 'wstorm',
+		binary: 'webstorm',
 		isTerminalEditor: false,
 		paths: [],
-		keywords: []
+		keywords: [
+			'wstorm'
+		]
 	},
 	{
 		id: 'textmate',
