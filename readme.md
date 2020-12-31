@@ -1,4 +1,4 @@
-# env-editor [![Build Status](https://travis-ci.org/sindresorhus/env-editor.svg?branch=master)](https://travis-ci.org/sindresorhus/env-editor)
+# env-editor
 
 > Get metadata on the default editor or a specific editor
 
