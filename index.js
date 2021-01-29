@@ -109,6 +109,18 @@ const allEditors = () => [
 			'/Applications/Emacs.app/Contents/MacOS/Emacs'
 		],
 		keywords: []
+	},
+	{
+		id: 'androidstudio',
+		name: 'Android Studio',
+		binary: 'studio',
+		isTerminalEditor: false,
+		paths: [
+			'/Applications/Android Studio.app/Contents/MacOS/studio'
+		],
+		keywords: [
+			'studio'
+		]
 	}
 ];
 

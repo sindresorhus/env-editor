@@ -80,6 +80,13 @@ test('getEditor() - GNU Emacs for Mac OS X', t => {
 	t.is(getEditor('GNU Emacs for Mac OS X').id, 'emacsforosx');
 });
 
+test('getEditor() - Android Studio', t => {
+	t.is(getEditor('androidstudio').id, 'androidstudio');
+	t.is(getEditor('studio').id, 'androidstudio');
+	t.is(getEditor('Android Studio').id, 'androidstudio');
+	t.is(getEditor('/Applications/Android Studio.app/Contents/MacOS/studio').id, 'androidstudio');
+});
+
 test('all()', t => {
 	const all = allEditors();
 	t.true(Array.isArray(all));
