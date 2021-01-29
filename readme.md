@@ -7,16 +7,17 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 
 ## Supported editors
 
-- Sublime Text
+- Android Studio
 - Atom
-- Visual Studio Code
-- WebStorm
+- GNU Emacs
+- GNU nano
+- IntelliJ
+- NeoVim
+- Sublime Text
 - TextMate
 - Vim
-- NeoVim
-- IntelliJ
-- GNU nano
-- GNU Emacs
+- Visual Studio Code
+- WebStorm
 
 
 ## Install
