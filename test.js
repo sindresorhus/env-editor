@@ -81,10 +81,13 @@ test('getEditor() - GNU Emacs for Mac OS X', t => {
 });
 
 test('getEditor() - Android Studio', t => {
-	t.is(getEditor('androidstudio').id, 'androidstudio');
-	t.is(getEditor('studio').id, 'androidstudio');
-	t.is(getEditor('Android Studio').id, 'androidstudio');
-	t.is(getEditor('/Applications/Android Studio.app/Contents/MacOS/studio').id, 'androidstudio');
+	t.is(getEditor('android-studio').id, 'android-studio');
+	t.is(getEditor('studio').id, 'android-studio');
+	t.is(getEditor('Android Studio').id, 'android-studio');
+	t.is(getEditor('/Applications/Android Studio.app/Contents/MacOS/studio').id, 'android-studio');
+	t.is(getEditor('/usr/local/Android/android-studio/bin/studio.sh').id, 'android-studio');
+	t.is(getEditor('C:\\Program Files (x86)\\Android\\android-studio\\bin\\studio.exe').id, 'android-studio');
+	t.is(getEditor('C:\\Program Files\\Android\\android-studio\\bin\\studio64.exe').id, 'android-studio');
 });
 
 test('all()', t => {
