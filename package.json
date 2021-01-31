@@ -1,6 +1,6 @@
 {
 	"name": "env-editor",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "Get metadata on the default editor or a specific editor",
 	"license": "MIT",
 	"repository": "sindresorhus/env-editor",
