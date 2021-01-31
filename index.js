@@ -109,6 +109,21 @@ const allEditors = () => [
 			'/Applications/Emacs.app/Contents/MacOS/Emacs'
 		],
 		keywords: []
+	},
+	{
+		id: 'android-studio',
+		name: 'Android Studio',
+		binary: 'studio',
+		isTerminalEditor: false,
+		paths: [
+			'/Applications/Android Studio.app/Contents/MacOS/studio',
+			'/usr/local/Android/android-studio/bin/studio.sh',
+			'C:\\Program Files (x86)\\Android\\android-studio\\bin\\studio.exe',
+			'C:\\Program Files\\Android\\android-studio\\bin\\studio64.exe'
+		],
+		keywords: [
+			'studio'
+		]
 	}
 ];
 
@@ -129,7 +144,7 @@ const getEditor = editor => {
 		}
 
 		for (const editorPath of editor.paths) {
-			if (path.normalize(needle) === path.normalize(editorPath)) {
+			if (path.normalize(needle) === path.normalize(editorPath.toLowerCase())) {
 				return editor;
 			}
 		}
