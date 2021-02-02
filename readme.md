@@ -18,7 +18,7 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 - GNU nano
 - GNU Emacs
 - Android Studio
-
+- Xcode
 
 ## Install
 

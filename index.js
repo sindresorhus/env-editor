@@ -124,6 +124,19 @@ const allEditors = () => [
 		keywords: [
 			'studio'
 		]
+	},
+	{
+		id: 'xcode',
+		name: 'Xcode',
+		binary: 'xed',
+		isTerminalEditor: false,
+		paths: [
+			'/Applications/Xcode.app/Contents/MacOS/Xcode',
+			'/Applications/Xcode-beta.app/Contents/MacOS/Xcode'
+		],
+		keywords: [
+			'xed'
+		]
 	}
 ];
 

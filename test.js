@@ -90,6 +90,14 @@ test('getEditor() - Android Studio', t => {
 	t.is(getEditor('C:\\Program Files\\Android\\android-studio\\bin\\studio64.exe').id, 'android-studio');
 });
 
+test('getEditor() - Xcode', t => {
+	t.is(getEditor('xcode').id, 'xcode');
+	t.is(getEditor('xed').id, 'xcode');
+	t.is(getEditor('Xcode').id, 'xcode');
+	t.is(getEditor('/Applications/Xcode.app/Contents/MacOS/Xcode').id, 'xcode');
+	t.is(getEditor('/Applications/Xcode-beta.app/Contents/MacOS/Xcode').id, 'xcode');
+});
+
 test('all()', t => {
 	const all = allEditors();
 	t.true(Array.isArray(all));
