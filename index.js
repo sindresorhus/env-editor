@@ -1,5 +1,4 @@
-'use strict';
-const path = require('path');
+import path from 'path';
 
 const allEditors = () => [
 	{
@@ -166,7 +165,7 @@ const getEditor = editor => {
 	};
 };
 
-module.exports.defaultEditor = () => {
+const defaultEditor = () => {
 	const editor = process.env.EDITOR || process.env.VISUAL;
 
 	if (!editor) {
@@ -184,5 +183,4 @@ Set it to the command/path of your editor in ~/.zshenv or ~/.bashrc:
 	return getEditor(editor);
 };
 
-module.exports.getEditor = getEditor;
-module.exports.allEditors = allEditors;
+export {allEditors, getEditor, defaultEditor};

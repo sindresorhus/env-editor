@@ -1,5 +1,5 @@
 import test from 'ava';
-import {defaultEditor, getEditor, allEditors} from '.';
+import {defaultEditor, getEditor, allEditors} from './index.js';
 
 test.serial('defaultEditor()', t => {
 	const editor = process.env.EDITOR;
