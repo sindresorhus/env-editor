@@ -1,5 +1,6 @@
+import process from 'node:process';
 import test from 'ava';
-import {defaultEditor, getEditor, allEditors} from '.';
+import {defaultEditor, getEditor, allEditors} from './index.js';
 
 test.serial('defaultEditor()', t => {
 	const editor = process.env.EDITOR;
@@ -98,7 +99,7 @@ test('getEditor() - Xcode', t => {
 	t.is(getEditor('/Applications/Xcode-beta.app/Contents/MacOS/Xcode').id, 'xcode');
 });
 
-test('all()', t => {
+test('allEditors()', t => {
 	const all = allEditors();
 	t.true(Array.isArray(all));
 	t.true(all.length > 0);

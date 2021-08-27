@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import {Editor, getEditor, defaultEditor, allEditors} from '.';
+import {getEditor, defaultEditor, allEditors, Editor} from './index.js';
 
 expectType<Editor>(getEditor('sublime'));
 expectType<Editor>(defaultEditor());

@@ -4,7 +4,6 @@
 
 This module is used by [`open-editor`](https://github.com/sindresorhus/open-editor).
 
-
 ## Supported editors
 
 - Sublime Text
@@ -26,11 +25,10 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 $ npm install env-editor
 ```
 
-
 ## Usage
 
 ```js
-const {defaultEditor, getEditor, allEditors} = require('env-editor');
+import {defaultEditor, getEditor, allEditors} from 'env-editor';
 
 defaultEditor();
 /*
@@ -76,7 +74,6 @@ allEditors();
 ]
 */
 ```
-
 
 ## API
 
