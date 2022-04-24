@@ -36,6 +36,12 @@ test('getEditor() - Visual Studio Code', t => {
 	t.is(getEditor('Visual Studio Code').id, 'vscode');
 });
 
+test('getEditor() - VSCodium', t => {
+	t.is(getEditor('vscodium').id, 'vscodium');
+	t.is(getEditor('codium').id, 'vscodium');
+	t.is(getEditor('VSCodium').id, 'vscodium');
+});
+
 test('getEditor() - WebStorm', t => {
 	t.is(getEditor('webstorm').id, 'webstorm');
 	t.is(getEditor('wstorm').id, 'webstorm');
