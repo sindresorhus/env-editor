@@ -37,6 +37,16 @@ export function allEditors() {
 			],
 		},
 		{
+			id: 'vscodium',
+			name: 'VSCodium',
+			binary: 'codium',
+			isTerminalEditor: false,
+			paths: [
+				'/Applications/VSCodium.app/Contents/Resources/app/bin/codium',
+			],
+			keywords: [],
+		},
+		{
 			id: 'webstorm',
 			name: 'WebStorm',
 			binary: 'webstorm',
