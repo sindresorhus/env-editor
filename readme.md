@@ -9,6 +9,8 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 - Sublime Text
 - Atom
 - Visual Studio Code
+- Visual Studio Code - Insiders
+- VSCodium
 - WebStorm
 - TextMate
 - Vim

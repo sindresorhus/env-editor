@@ -36,6 +36,19 @@ test('getEditor() - Visual Studio Code', t => {
 	t.is(getEditor('Visual Studio Code').id, 'vscode');
 });
 
+test('getEditor() - Visual Studio Code - Insiders', t => {
+	t.is(getEditor('vscode-insiders').id, 'vscode-insiders');
+	t.is(getEditor('code-insiders').id, 'vscode-insiders');
+	t.is(getEditor('vs code insiders').id, 'vscode-insiders');
+	t.is(getEditor('code insiders').id, 'vscode-insiders');
+	t.is(getEditor('insiders').id, 'vscode-insiders');
+	t.is(getEditor('Visual Studio Code - Insiders').id, 'vscode-insiders');
+
+	// Ensure code-insiders doesn't match regular vscode
+	const insiders = getEditor('code-insiders');
+	t.not(insiders.id, 'vscode');
+});
+
 test('getEditor() - VSCodium', t => {
 	t.is(getEditor('vscodium').id, 'vscodium');
 	t.is(getEditor('codium').id, 'vscodium');

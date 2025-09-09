@@ -25,6 +25,20 @@ export function allEditors() {
 			keywords: [],
 		},
 		{
+			id: 'vscode-insiders',
+			name: 'Visual Studio Code - Insiders',
+			binary: 'code-insiders',
+			isTerminalEditor: false,
+			paths: [
+				'/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code-insiders',
+			],
+			keywords: [
+				'vs code insiders',
+				'code insiders',
+				'insiders',
+			],
+		},
+		{
 			id: 'vscode',
 			name: 'Visual Studio Code',
 			binary: 'code',
@@ -163,10 +177,11 @@ export function getEditor(editor) {
 
 	for (const editor of allEditors()) {
 		// TODO: Maybe use `leven` module for more flexible matching
+		// Check for exact id, name, or full binary match first
 		if (
 			needle === editor.id
 			|| needle === editor.name.toLowerCase()
-			|| binary === editor.binary
+			|| id === editor.binary
 		) {
 			return editor;
 		}
@@ -181,6 +196,13 @@ export function getEditor(editor) {
 			if (needle === keyword) {
 				return editor;
 			}
+		}
+	}
+
+	// Fallback to checking the shortened binary if no exact match found
+	for (const editor of allEditors()) {
+		if (binary === editor.binary) {
+			return editor;
 		}
 	}
 
