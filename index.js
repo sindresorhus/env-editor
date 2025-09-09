@@ -70,7 +70,9 @@ export function allEditors() {
 			binary: 'vim',
 			isTerminalEditor: true,
 			paths: [],
-			keywords: [],
+			keywords: [
+				'vi',
+			],
 		},
 		{
 			id: 'neovim',

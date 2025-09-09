@@ -57,6 +57,7 @@ test('getEditor() - TextMate', t => {
 test('getEditor() - Vim', t => {
 	t.is(getEditor('vim').id, 'vim');
 	t.is(getEditor('Vim').id, 'vim');
+	t.is(getEditor('vi').id, 'vim'); // Vi is a keyword for vim (common on Ubuntu)
 });
 
 test('getEditor() - NeoVim', t => {
