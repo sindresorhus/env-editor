@@ -23,8 +23,8 @@ This module is used by [`open-editor`](https://github.com/sindresorhus/open-edit
 
 ## Install
 
-```
-$ npm install env-editor
+```sh
+npm install env-editor
 ```
 
 ## Usage
