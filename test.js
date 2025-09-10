@@ -61,6 +61,13 @@ test('getEditor() - WebStorm', t => {
 	t.is(getEditor('WebStorm').id, 'webstorm');
 });
 
+test('getEditor() - PhpStorm', t => {
+	t.is(getEditor('phpstorm').id, 'phpstorm');
+	t.is(getEditor('pstorm').id, 'phpstorm');
+	t.is(getEditor('php').id, 'phpstorm');
+	t.is(getEditor('PhpStorm').id, 'phpstorm');
+});
+
 test('getEditor() - TextMate', t => {
 	t.is(getEditor('textmate').id, 'textmate');
 	t.is(getEditor('mate').id, 'textmate');

@@ -71,6 +71,16 @@ export function allEditors() {
 			],
 		},
 		{
+			id: 'phpstorm',
+			name: 'PhpStorm',
+			binary: 'pstorm',
+			isTerminalEditor: false,
+			paths: [],
+			keywords: [
+				'php',
+			],
+		},
+		{
 			id: 'textmate',
 			name: 'TextMate',
 			binary: 'mate',
